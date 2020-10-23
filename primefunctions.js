@@ -11,7 +11,9 @@ function primeGen(thresholdNumber) {
     return numberList;
   }
 
-  // populate the array with numbers up to the threshold number
+  /*
+   populate the array with numbers up to the threshold number
+  */
   for (let i = 2; i <= thresholdNumber; i++) {
     numberList.push(i);
   }
@@ -23,4 +25,21 @@ function primeGen(thresholdNumber) {
     numberList = _.reject(numberList, function (num) { return ((num % j === 0) && (num !== j)); });
   }
   return numberList;
+}
+
+/* This function takes a list of numbers, and returns the cumulative sum of the numbers
+   Each value in the return array will be the cumulative sum of all the numbers before it in the input array
+   so position 3 in the return array will contain the sum of positions 0-2 in the input array
+ */
+function cumulativeSum(inputArray) {
+  const returnArray = [];
+
+  // iterate through the input array and slice it into temporary array that holds all items up to current value of i
+  // pass this temporary array to the _.reduce function, and then assign this value into the return array
+  for (let i = 1; i <= inputArray.length; i++) {
+    const tempArray = inputArray.slice(0, (i));
+    returnArray.push(_.reduce(tempArray, function (memo, num) { return memo + num; }));
+  }
+
+  return returnArray;
 }
