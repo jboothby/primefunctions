@@ -43,3 +43,48 @@ function cumulativeSum(inputArray) {
 
   return returnArray;
 }
+
+/* This function accepts a single number as a parameter, and then then returns an array with two values
+   The first value is the number with the following qualities:
+   1.) This number is less than the parameter value
+   2.) This number is prime
+   3.) This number is the sum of consecutive prime numbers
+   4.) The number of consecutive primes that add to this number is larger than for any other number that
+       fits the first three qualities
+   The second value is the number of consecutive primes that sum up to the first value
+   Examples: maxPrimeSum(100) -> [ 41, 6] ( because 2 + 3 + 5 + 7 + 11 + 13 = 41)
+             maxPrimeSum(1000) -> [ 953, 21]
+ */
+function maxPrimeSum(inputNumber) {
+  // create an array of all primes less than the value ( meets quality 1 and 2 above)
+  const primeArray = primeGen(inputNumber);
+
+  // create a return array
+  let returnArray = [0, 0];
+
+  // slice the primeArray into increasingly small pieces and check for sequential numbers
+  for (let i = 0; i < primeArray.length; i++) {
+    const tempArray = primeArray.slice(i, primeArray.length);
+    // find the cumulativeSum of values in the tempArray
+    const cumulativeArray = cumulativeSum(tempArray);
+
+    // iterate through the cumulative sum array and check to see if values are prime
+    // the (index + 1) of the prime number in the array is number of cumulative primes required to create that sum
+    // we start at position 1 because position to be consecutive numbers, we have to add at least 2
+    // this loops satisfies quality 3 and 4 for this function
+    for (let j = 1; j < cumulativeArray.length; j++) {
+      // check to see if number is prime, and it's consecutive value is higher than any before it
+      if ((tempArray.indexOf(cumulativeArray[j]) !== -1) && (j + 1 > (returnArray[1]))) {
+        // update the return array with the new largest
+        returnArray = [cumulativeArray[j], j + 1];
+      }
+    }
+  }
+
+  return returnArray;
+}
+
+// Test Code
+console.log('primeGen(100)=', primeGen(100));
+console.log('cumulativeSum(primeGen(100))=', cumulativeSum(primeGen(100)));
+console.log('maxPrimeSum(100)=', maxPrimeSum(100));
