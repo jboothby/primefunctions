@@ -19,4 +19,13 @@ describe('primefunctions.js', function () {
       chai.expect(cumulativeSum([10, 11, 12, 13, 14])).to.deep.equal([10, 21, 33, 46, 60]);
     });
   });
+  // test maxPrimeSum() method
+  describe('maxPrimeSum()', function () {
+    it('maxPrimeSum(100)=>[41, 6]', function () {
+      chai.expect(maxPrimeSum(100)).to.deep.equal([41, 6]);
+    });
+    it('maxPrimeSum(1000)=>[953, 21]', function () {
+      chai.expect(maxPrimeSum(1000)).to.deep.equal([953, 21]);
+    });
+  });
 });
