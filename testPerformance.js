@@ -1,4 +1,4 @@
-/* global primeGen, cumulativeSum, maxPrimeSum */
+/* global maxPrimeSum */
 // This file tests the performance of primefunctions2.js when run with testSuite2.html
 describe('Test for Performance', function () {
   describe('maxPrimeSum()', function () {
