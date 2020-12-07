@@ -85,6 +85,7 @@ function maxPrimeSum(inputNumber) {
 }
 
 // Test Code
+
 console.log('primeGen(100)=', primeGen(100));
 console.log('cumulativeSum(primeGen(100))=', cumulativeSum(primeGen(100)));
-console.log('maxPrimeSum(100)=', maxPrimeSum(100));
+console.log('maxPrimeSum(100)=', maxPrimeSum(1000));
