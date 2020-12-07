@@ -62,7 +62,8 @@ function maxPrimeSum(inputNumber) {
   let returnArray = [0, 0];
 
   // slice the primeArray into increasingly small pieces and check for sequential numbers
-  for (let i = 0; i < primeArray.length; i++) {
+  // every cumulative sum i have seen uses one of the first 5 primes, so we cut this to 5
+  for (let i = 0; i < 5; i++) {
     const tempArray = primeArray.slice(i, primeArray.length);
     // find the cumulativeSum of values in the tempArray
     const cumulativeArray = cumulativeSum(tempArray);
