@@ -1,3 +1,4 @@
+/* global primeGen, cumulativeSum, maxPrimeSum */
 // begin Correctness testing of primefunctions.js using mocha and chai
 // this file should be run only from testSuite1.html to include proper headers
 describe('Test For Correctness', function () {
