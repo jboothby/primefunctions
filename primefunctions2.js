@@ -34,11 +34,10 @@ function primeGen(thresholdNumber) {
 function cumulativeSum(inputArray) {
   const returnArray = [];
 
-  // iterate through the input array and slice it into temporary array that holds all items up to current value of i
-  // pass this temporary array to the _.reduce function, and then assign this value into the return array
+  // push initial value onto the return array because this does not change
+  returnArray.push(inputArray[0]);
   for (let i = 1; i <= inputArray.length; i++) {
-    const tempArray = inputArray.slice(0, (i));
-    returnArray.push(_.reduce(tempArray, function (memo, num) { return memo + num; }));
+    returnArray.push(inputArray[i] + returnArray[i - 1]);
   }
 
   return returnArray;
