@@ -84,11 +84,23 @@ function maxPrimeSum(inputNumber) {
   return returnArray;
 }
 
+console.log('primeGen(100)=', primeGen(100));
+console.log('cumulativeSum(primeGen(100))=', cumulativeSum(primeGen(100)));
+console.log('maxPrimeSum(100)=', maxPrimeSum(1000));
+
 /* Optimizations
-  Optimization 1: Removed function calls to underscore from the cumulativeSum function. The function now calculates this directly using an array and a single for loop.
-                  This dramatically increased performance
-  Optimization 2: Reduced scope of maxPrimeSum to only check for sums that involve the first 5 primes. This has not affected the correctness of the program
-                  for any tested values, but improved performance by nearly 100 fold.
-  Optimization 3: Only calculate the cumulativeArray for the first half of the primeArray, because any sum involving two sequential numbers above the first half of the array
-                  will be larger than the largest value and therefore invalid.
+Optimization 1:
+Removed function calls to underscore from the cumulativeSum function. The function now calculates
+this directly using an array and a single for loop.
+This dramatically increased performance
+
+Optimization 2:
+Reduced scope of maxPrimeSum to only check for sums that involve the first 5 primes.
+This has not affected the correctness of the program
+for any tested values, but improved performance by nearly 100 fold.
+
+Optimization 3:
+Only calculate the cumulativeArray for the first half of the primeArray, because any sum
+involving two sequential numbers above the first half of the array
+will be larger than the largest value and therefore invalid.
  */
