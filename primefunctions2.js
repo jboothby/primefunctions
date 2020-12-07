@@ -36,7 +36,7 @@ function cumulativeSum(inputArray) {
 
   // push initial value onto the return array because this does not change
   returnArray.push(inputArray[0]);
-  for (let i = 1; i <= inputArray.length; i++) {
+  for (let i = 1; i <= inputArray.length - 1; i++) {
     returnArray.push(inputArray[i] + returnArray[i - 1]);
   }
 
