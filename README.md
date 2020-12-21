@@ -27,3 +27,7 @@ Functions:
            The second value is the number of consecutive primes that sum up to the first value
            Examples: maxPrimeSum(100) -> [ 41, 6] ( because 2 + 3 + 5 + 7 + 11 + 13 = 41)
                      maxPrimeSum(1000) -> [ 953, 21]
+                     
+# Test Performance Files
+These files use the Mocha and Chai library to automate the correctness and performance testing
+of the functions in PrimeFunctions. This was use to optimize the code for speed
