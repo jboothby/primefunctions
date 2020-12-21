@@ -28,6 +28,10 @@ Functions:
            Examples: maxPrimeSum(100) -> [ 41, 6] ( because 2 + 3 + 5 + 7 + 11 + 13 = 41)
                      maxPrimeSum(1000) -> [ 953, 21]
                      
-# Test Performance Files
+# primeFunctions2
+This file is the optimized version of primefunctions. Extra calls to the underscore library were removed,
+and the code structure was changed. This resulted in speeding up the maxPrimeSum function by over 1000%
+
+# Test Files
 These files use the Mocha and Chai library to automate the correctness and performance testing
 of the functions in PrimeFunctions. This was use to optimize the code for speed
